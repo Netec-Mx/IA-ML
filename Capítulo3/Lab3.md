@@ -1,62 +1,67 @@
-# Aplicación real de una Red Neuronal
+# Práctica 3. Aplicación real de una Red Neuronal
 
 ## Objetivo de la práctica:
-Aplicar los conocimientos aprendidos para comprender cómo se crea una red neuronal para detectar si una transacción bancaria es legítima y obtener un resultado mayor al 80% de efectividad.
 
+Al finalizar la práctica, serás capaz de:
 
-## Objetivo Visual 
+- Aplicar los conocimientos aprendidos para comprender cómo se crea una red neuronal para detectar si una transacción bancaria es legítima y obtener un resultado mayor al 80% de efectividad.
 
-![Objetivo visual](/images/cap3_obj_vis.png) 
+## Objetivo visual:
+
+![Objetivo visual](../images/cap3_obj_vis.png) 
 
 ## Duración aproximada:
 
 - 60 minutos.
 
-## Instrucciones 
+## Instrucciones:
 
-### **CONFIGURACIÓN DEL ENTORNO DE TRABAJO**
+### Configuración del entorno de trabajo:
 
-Dentro de Google Drive, seleccionar `Nuevo`
+1. Dentro de Google Drive, selecciona `Nuevo`.
 
-![imagen resultado](images\conf_1.png)
+![imagen resultado](../images/conf_1.png)
 
-Dar clic en `Más` y `Conectar con más aplicaciones`
+2. Da clic en `Más` y después en `Conectar con más aplicaciones`.
 
-![imagen resultado](images\conf_2.png)
+![imagen resultado](../images/conf_2.png)
 
-En el buscador escribir `Colab` y seleccionar el que dice `Colaboratory`
+3. En el buscador, escribe `Colab` y selecciona el que dice `Colaboratory`.
 
-![imagen resultado](images\conf_3.png)
+![imagen resultado](../images/conf_3.png)
 
-Dar clic en `Instalar`
+4. Da clic en `Instalar`.
 
-![imagen resultado](images\conf_4.png)
+![imagen resultado](../images/conf_4.png)
 
-En `Nuevo`, seleccionar `Colaboratory`
-![imagen resultado](images\conf_5.png)
+5. En el botón de`Nuevo`, selecciona `Colaboratory`.
 
-Cuando se abra un nuevo archivo, seleccionar `Entorno de ejecución`
-![imagen resultado](images\conf_6.png)
+![imagen resultado](../images/conf_5.png)
 
-Seleccionar `Cambiar tipo de entorno de ejecución`
+6. Cuando se abra un nuevo archivo, selecciona `Entorno de ejecución`.
 
-![imagen resultado](images\conf_7.png)
+![imagen resultado](../images/conf_6.png)
 
-Seleccionar `T4 GPU` y dar clic en `Guardar`
-![imagen resultado](images\conf_8.png)
+7. Selecciona `Cambiar tipo de entorno de ejecución`.
 
-Finalmente, conectarse a los recursos seleccionados
+![imagen resultado](../images/conf_7.png)
 
-![imagen resultado](images\conf_9.png)
+8. Selecciona `T4 GPU` y da clic en `Guardar`.
 
-### Tarea 1. **Cargar el dataset**
-Paso 1. Descargar el siguiente [archivo](https://drive.google.com/file/d/1afk1TL6_91oYtp-FH5KbQnpdKyCNueZB/view?usp=sharing) csv y subirlo al entorno de trabajo de Colab
+![imagen resultado](../images/conf_8.png)
 
-![imagen resultado](images\cap3_1.png)
-![imagen resultado](images\cap3_2.png)
+9. Finalmente, conéctate a los recursos seleccionados.
 
+![imagen resultado](../images/conf_9.png)
 
-Paso 2. Importar las librerias necesarias para el procesamiento de datos, graficas, etc.
+### Tarea 1. Cargar el dataset.
+
+Paso 1. Descarga el siguiente [archivo](https://drive.google.com/file/d/1afk1TL6_91oYtp-FH5KbQnpdKyCNueZB/view?usp=sharing) csv y súbelo al entorno de trabajo de Colab.
+
+![imagen resultado](../images/cap3_1.png)
+![imagen resultado](../images/cap3_2.png)
+
+Paso 2. Importa las librerías necesarias para el procesamiento de datos, gráficas, etc.
 
 ```python
 %matplotlib inline
@@ -71,7 +76,8 @@ from sklearn.model_selection import train_test_split
 from matplotlib.colors import LogNorm
 from sklearn.metrics import f1_score
 ```
-Paso 3. Se dividiran los datos en el siguiente orden:
+
+Paso 3. Se dividirán los datos en el siguiente orden:
   - Primero, el conjunto de entrenamiento (train_set) recibe el 60% de los datos.
   - Luego, el 40% restante se divide nuevamente en dos partes iguales:
     - 20% para validación (val_set).
@@ -93,14 +99,14 @@ def remove_labels(df, label_name):
     return (X, y)
 ```
 
-Paso 4. Importar los datos y visualizar los 10 primeros
+Paso 4. Importa los datos y visualiza los 10 primeros.
 
 ```python
 df = pd.read_csv('creditcard.csv')
 df.head(10)
 ```
 
-Paso 5. Tambien es posible visualizar caracteristicas particulares del dataset
+Paso 5. Asímismo, es posible visualizar características particulares del dataset.
 
 ```python
 # Información general del DataFrame
@@ -134,7 +140,7 @@ print("="*40)
 print(df.describe())
 
 ```
-Paso 6. Para agilizar el procesamiento, se usaran unicamente 2 variables (V10 y V14), las cuales se pueden visualizar en una grafica
+Paso 6. Para agilizar el procesamiento, se usarán unicamente dos variables (V10 y V14), las cuales se pueden visualizar en una gráfica.
 
 ```python
 plt.figure(figsize=(14, 6))
@@ -164,15 +170,15 @@ X_test_reduced = X_test[["V10", "V14"]].copy()
 X_train_reduced
 ```
 
-### Tarea 2. **Entrenar el modelo**
+### Tarea 2. Entrenar el modelo.
 
-Paso 8. Instalar el modulo de metricas de keras
+Paso 8. Instala el módulo de métricas de Keras.
 
 ```python
 !pip install keras-metrics
 ```
 
-Paso 9. Definir la arquitectura del modelo
+Paso 9. Define la arquitectura del modelo.
 
 ```python
 from keras import models
@@ -195,15 +201,15 @@ model.compile(optimizer='adam',
 print("Using TensorFlow backend.")
 ```
 
-Paso 10. Visualizar la arquitectura construida
+Paso 10. Visualiza la arquitectura construida.
 
 ```python
 model.summary()
 ```
 
-### Tarea 4. **Entrenar el modelo**
+### Tarea 4. Entrena el modelo.
 
-Paso 11. Compilar el modelo usando **Adam** como optimizador, una función de pérdida `binary_crossentropy` y obetener las métricas de calidad del modelo durante el entrenamiento:
+Paso 11. Compila el modelo usando **Adam** como optimizador, una función de pérdida `binary_crossentropy` y obetén las métricas de calidad del modelo durante el entrenamiento:
 
 ```python
 from sklearn.metrics import f1_score
@@ -223,7 +229,7 @@ f1 = f1_score(y_test, y_pred)
 print("F1 Score:", f1)
 ```
 
-Paso 12. Graficar los resultados del modelo
+Paso 12. Grafica los resultados del modelo.
 
 ```python
 def plot_ann_decision_boundary(X, y, model, steps=1000):
@@ -250,7 +256,7 @@ plt.ylabel("V14", fontsize=14)
 plt.show()
 ```
 
-Paso 13. Visualizar las predicciones que hace el modelo
+Paso 13. Visualiza las predicciones que hace el modelo.
 
 ```python
 y_pred_prob = model.predict(X_train_reduced)
@@ -264,7 +270,7 @@ plt.ylabel("V14", fontsize=14)
 plt.show()
 ```
 
-Paso 14. Y tambien evaluar la precisión del modelo
+Paso 14. También, evalúa la precisión del modelo.
 
 ```python
 y_pred_prob = model.predict(X_test_reduced)
@@ -274,5 +280,6 @@ y_pred = (y_pred_prob > 0.5).astype(int)
 print("F1 Score:", f1_score(y_test, y_pred))
 ```
 
-### Resultado esperado
+## Resultado esperado:
+
 ![imagen resultado](/images/cap3_resultado.png) 
