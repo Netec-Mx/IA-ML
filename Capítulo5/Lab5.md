@@ -1,4 +1,4 @@
-# Práctica 5: API GPT: DALL-E 3
+# Práctica 5. API GPT: DALL-E 3
 
 ## Objetivo de la práctica:
 
