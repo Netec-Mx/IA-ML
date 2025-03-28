@@ -1,91 +1,98 @@
-# Primera Red Neuronal
+# Práctica 2. Primera red neuronal
 
 ## Objetivo de la práctica:
-Crear una red neuronal desde cero que separe dos grupos de datos.
 
-## Objetivo Visual 
+Al finalizar la práctica, serás capaz de:
 
-![Objetivo visual](images\cap2_obj_vis.png)
+- Crear una red neuronal desde cero que separe dos grupos de datos.
+
+## Objetivo visual:
+
+![Objetivo visual](../images/cap2_obj_vis.png)
 
 ## Duración aproximada:
 
 - 50 minutos.
 
-## Instrucciones 
+## Instrucciones:
 
-### **CONFIGURACIÓN DEL ENTORNO DE TRABAJO**
+### Configuración del entorno de trabajo:
 
-Dentro de Google Drive, seleccionar `Nuevo`
+1. Dentro de Google Drive, selecciona `Nuevo`.
 
-![imagen resultado](images\conf_1.png)
+![imagen resultado](../images/conf_1.png)
 
-Dar clic en `Más` y `Conectar con más aplicaciones`
+2. Da clic en `Más` y después en `Conectar con más aplicaciones`.
 
-![imagen resultado](images\conf_2.png)
+![imagen resultado](../images/conf_2.png)
 
-En el buscador escribir `Colab` y seleccionar el que dice `Colaboratory`
+3. En el buscador, escribe `Colab` y selecciona el que dice `Colaboratory`.
 
-![imagen resultado](images\conf_3.png)
+![imagen resultado](../images/conf_3.png)
 
-Dar clic en `Instalar`
+4. Da clic en `Instalar`.
 
-![imagen resultado](images\conf_4.png)
+![imagen resultado](../images/conf_4.png)
 
-En `Nuevo`, seleccionar `Colaboratory`
-![imagen resultado](images\conf_5.png)
+5. En el botón de`Nuevo`, selecciona `Colaboratory`.
 
-Cuando se abra un nuevo archivo, seleccionar `Entorno de ejecución`
-![imagen resultado](images\conf_6.png)
+![imagen resultado](../images/conf_5.png)
 
-Seleccionar `Cambiar tipo de entorno de ejecución`
+6. Cuando se abra un nuevo archivo, selecciona `Entorno de ejecución`.
 
-![imagen resultado](images\conf_7.png)
+![imagen resultado](../images/conf_6.png)
 
-Seleccionar `T4 GPU` y dar clic en `Guardar`
-![imagen resultado](images\conf_8.png)
+7. Selecciona `Cambiar tipo de entorno de ejecución`.
 
-Finalmente, conectarse a los recursos seleccionados
+![imagen resultado](../images/conf_7.png)
 
-![imagen resultado](images\conf_9.png)
+8. Selecciona `T4 GPU` y da clic en `Guardar`.
 
-### Tarea 1. **Modificar una red neuronal de manera interactiva**
+![imagen resultado](../images/conf_8.png)
 
-Paso 1. Ingresar al siguiente [enlace](https://playground.tensorflow.org/#activation=sigmoid&batchSize=10&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=7,2&seed=0.24502&showTestData=false&discretize=true&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=true)
+9. Finalmente, conéctate a los recursos seleccionados.
 
-Paso 2. Colocar los siguientes parametros:
+![imagen resultado](../images/conf_9.png)
 
-**Parámetros Generales**
+### Tarea 1. Modificar una red neuronal de manera interactiva.
+
+Paso 1. Ingresar al siguiente [enlace](https://playground.tensorflow.org/#activation=sigmoid&batchSize=10&dataset=circle&regDataset=reg-plane&learningRate=0.03&regularizationRate=0&noise=0&networkShape=7,2&seed=0.24502&showTestData=false&discretize=true&percTrainData=50&x=true&y=true&xTimesY=false&xSquared=false&ySquared=false&cosX=false&sinX=false&cosY=false&sinY=false&collectStats=false&problem=classification&initZero=false&hideText=true).
+
+Paso 2. Coloca los siguientes parámetros:
+
+**Parámetros generales:**
 
 - **Ratio de entrenamiento a prueba:** 50%
 - **Ruido:** 0
 - **Tamaño del batch:** 10
 
-**Selección de Características (Features)**
+**Selección de características (Features):**
 
-Activar solo las siguientes características de entrada:
+Únicamente activa las siguientes características de entrada:
+
 - ✅ `X₁`
 - ✅ `X₂`
 - ❌ No activar ninguna otra característica adicional (como `X₁²`, `X₂²`, `X₁X₂`, `sin(X₁)`, `sin(X₂)`).
 
-**Arquitectura de la Red Neuronal**
+**Arquitectura de la Red Neuronal:**
 
-- **Capas ocultas:** 2
-  - Primera capa oculta: **7 neuronas**
-  - Capa de salida: **2 neuronas**
+- **Capas ocultas:** 2.
+  - Primera capa oculta: **7 neuronas**.
+  - Capa de salida: **2 neuronas**.
 
-**Configuración en la parte superior**
+**Configuración en la parte superior:**
 
-- **Learning rate:** `0.1`
-- **Función de activación:** `Sigmoid`
-- **Regularización:** `None`
-- **Tasa de regularización:** `0`
-- **Tipo de problema:** `Clasificación`
+- **Learning rate:** `0.1`.
+- **Función de activación:** `Sigmoid`.
+- **Regularización:** `None`.
+- **Tasa de regularización:** `0`.
+- **Tipo de problema:** `Clasificación`.
 
-![tensorflow interface](/images/cap2_1.png) 
+![tensorflow interface](../images/cap2_1.png) 
 
-### Tarea 2. **Cargar el dataset**
+### Tarea 2. Cargar el dataset.
 
-Paso 3. Importar las siguientes librerias y ejecutar la celda
+Paso 3. Importa las siguientes librerías y ejecuta la celda:
 
 ```python
 import numpy as np
@@ -94,9 +101,9 @@ import matplotlib.pyplot as plt
 from sklearn.datasets import make_circles
 ```
 
-![imagen resultado](images/cap2_2.png) 
+![imagen resultado](../images/cap2_2.png) 
 
-Paso 4. Insertar y ejecutar el siguiente codigo en una celda nueva para insertar los datos circulares
+Paso 4. Inserta y ejecuta el siguiente código en una celda nueva para insertar los datos circulares.
 
 ```python
 n = 500
@@ -113,7 +120,7 @@ plt.show()
 print(Y)
 ```
 
-Paso 5. Ahora que ya se han insertado los datos, es posible visualizarlos y colocarles un color para diferenciarlos
+Paso 5. Una vez que ya se han insertado los datos, es posible visualizarlos y colocarles un color para diferenciarlos.
 
 ```python
 plt.scatter(X[Y[:,0] == 0,0],X[Y[:,0] == 0,1], c = "gray")
@@ -123,9 +130,9 @@ plt.axis("equal")
 plt.show()
 ```
 
-### Tarea 3, **Visualizar las funciones de activacion**
+### Tarea 3. Visualizar las funciones de activacion.
 
-Paso 6. Se definiran de manera manual las funciones de activacion, aunque para aplicaciones reales es recomendable usar las que vienen por defecto en las librerias de redes neuronales.
+Paso 6. Se definirán de manera manual las funciones de activación, aunque para aplicaciones reales es recomendable usar las que vienen por defecto en las librerías de redes neuronales.
 
 ```python
 import numpy as np
@@ -160,7 +167,7 @@ sigm = (lambda x: 1 /(1 + np.e**(-x)),
 plt.show()
 ```
 
-Paso 7. Definiremos una arquitectura para la red neuronal
+Paso 7. Define una arquitectura para la red neuronal.
 
 ```python
 l0 = neural_layer(p, 4, sigm)
@@ -192,7 +199,7 @@ def train(neural_net, X, Y, l2_cost, lr = 0.5):
   a = neural_net[0].act_f(z)
 ```
 
-Paso 8. Se realizara una entrenamiento de dicha red neuronal en funcion a la arquitectura definida
+Paso 8. Se realizará una entrenamiento de dicha red neuronal en función a la arquitectura definida.
 
 ```python
 def train(neural_net, X, Y, l2_cost, lr = 0.5,train = True):
@@ -236,9 +243,9 @@ train(neural_net, X, Y, l2_cost, 0.5)
 
 ```
 
-### Tarea 3. **Visualizar el entrenamiento**
+### Tarea 3. Visualizar el entrenamiento.
 
-Paso 10. Finalmente, se graficara el resultado del entrenamiento a lo largo del tiempo, a la vez que se verifica mediante una grafica, la reduccion del error.
+Paso 10. Finalmente, se graficará el resultado del entrenamiento a lo largo del tiempo, a la vez que se verifica mediante una gráfica, la reducción del error.
 
 ```python
 import time
@@ -277,7 +284,8 @@ for i in range(10000):
     time.sleep(0.5)
 ```
 
-### Resultado esperado
-![imagen resultado](images/cap2_resultado_1.png) 
+### Resultado esperado:
+
+![imagen resultado](../images/cap2_resultado_1.png) 
 
 ![imagen resultado](images/cap2_resultado_2.png) 
