@@ -14,7 +14,11 @@ Al finalizar la práctica, serás capaz de:
 
 - 50 minutos.
 
+---
+
 **[⬅️ Atrás](https://netec-mx.github.io/IA-ML/Cap%C3%ADtulo1/Lab1.html)** | **[Lista General](https://netec-mx.github.io/IA-ML/)** | **[Siguiente ➡️](https://netec-mx.github.io/IA-ML/Cap%C3%ADtulo3/Lab3.html)**
+
+---
 
 ## Instrucciones:
 
