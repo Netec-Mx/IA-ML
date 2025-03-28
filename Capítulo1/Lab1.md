@@ -1,72 +1,78 @@
-# Comparación generacional en reconocimiento de voz
+# Práctica 1. Comparación generacional en reconocimiento de voz
 
 ## Objetivo de la práctica:
-Identificar la diferencia, tanto en código, variabilidad y eficiencia, entre los algoritmos que se usaban para el reconocimiento de voz antes de implementar IA, comparada con Whisper, una de las IAs de reconocimiento de voz más eficiente en la actualidad.
 
-## Objetivo Visual 
+Al finalizar la práctica, serás capaz de:
+- Identificar la diferencia, tanto en código, variabilidad y eficiencia, entre los algoritmos que se usaban para el reconocimiento de voz antes de implementar IA, comparada con Whisper, una de las inteligencias artificiales de reconocimiento de voz más eficiente en la actualidad.
 
-![imagen exp 1](images\cap1_1.png)
+## Objetivo visual:
+
+![imagen exp 1](../images/cap1_1.png)
 
 ## Duración aproximada:
 - 40 minutos.
 
-## Instrucciones 
+## Instrucciones:
 
-### **CONFIGURACIÓN DEL ENTORNO DE TRABAJO**
+### Configuración del entorno de trabajo:
 
-Dentro de Google Drive, seleccionar `Nuevo`
+1. Dentro de Google Drive, selecciona `Nuevo`.
 
-![imagen resultado](images\conf_1.png)
+![imagen resultado](../images/conf_1.png)
 
-Dar clic en `Más` y `Conectar con más aplicaciones`
+2. Da clic en `Más` y después en `Conectar con más aplicaciones`.
 
-![imagen resultado](images\conf_2.png)
+![imagen resultado](../images/conf_2.png)
 
-En el buscador escribir `Colab` y seleccionar el que dice `Colaboratory`
+3. En el buscador, escribe `Colab` y selecciona el que dice `Colaboratory`.
 
-![imagen resultado](images\conf_3.png)
+![imagen resultado](../images/conf_3.png)
 
-Dar clic en `Instalar`
+4. Da clic en `Instalar`.
 
-![imagen resultado](images\conf_4.png)
+![imagen resultado](../images/conf_4.png)
 
-En `Nuevo`, seleccionar `Colaboratory`
-![imagen resultado](images\conf_5.png)
+5. En el botón de`Nuevo`, selecciona `Colaboratory`.
 
-Cuando se abra un nuevo archivo, seleccionar `Entorno de ejecución`
-![imagen resultado](images\conf_6.png)
+![imagen resultado](../images/conf_5.png)
 
-Seleccionar `Cambiar tipo de entorno de ejecución`
+6. Cuando se abra un nuevo archivo, selecciona `Entorno de ejecución`.
 
-![imagen resultado](images\conf_7.png)
+![imagen resultado](../images/conf_6.png)
 
-Seleccionar `T4 GPU` y dar clic en `Guardar`
-![imagen resultado](images\conf_8.png)
+7. Selecciona `Cambiar tipo de entorno de ejecución`.
 
-Finalmente, conectarse a los recursos seleccionados
+![imagen resultado](../images/conf_7.png)
 
-![imagen resultado](images\conf_9.png)
+8. Selecciona `T4 GPU` y da clic en `Guardar`.
 
-### Tarea 1. **Reconocimiento de voz sin usar Inteligencia Artificial 📠**
+![imagen resultado](../images/conf_8.png)
 
-Paso 1. Escribir el siguiente comando en una celda para instalar las librerías necesarias:
+9. Finalmente, conéctate a los recursos seleccionados.
+
+![imagen resultado](../images/conf_9.png)
+
+### Tarea 1. Reconocimiento de voz sin usar Inteligencia Artificial 📠.
+
+Paso 1. Escribe el siguiente comando en una celda para instalar las librerías necesarias:
+
 ```python
 pip install pydub
 ```
-Paso 2. Dar click en el boton de ejecucion:
 
-![imagen resultado](images\cap1_2.png) 
+Paso 2. Da clic en el botón de ejecucion:
 
-Paso 3. Ingresar al siguiente enlace y descargar el archivo [`demo.wav`](https://drive.google.com/file/d/1mcn3E2UimZOLioW0sLNhbNc_q_9KUihv/view?usp=sharing)
+![imagen resultado](../images/cap1_2.png) 
 
-![imagen resultado](images\cap1_3.png) 
+Paso 3. Ingresa al siguiente enlace y descarga el archivo [`demo.wav`](https://drive.google.com/file/d/1mcn3E2UimZOLioW0sLNhbNc_q_9KUihv/view?usp=sharing)
 
-Paso 4. Arrastrar el archivo descargado `demo.wav` a la carpeta de archivos del entorno de trabajo
+![imagen resultado](../images/cap1_3.png) 
 
-![imagen resultado](images\cap1_4.png)
+Paso 4. Arrastra el archivo descargado `demo.wav` a la carpeta de archivos del entorno de trabajo.
 
-Paso 5. Colocar el siguiente codigo en una nueva celda y ejecutarlo. El resultado debe ser: `La conversión a WAV se ha completado y el archivo se encuentra en: /content/converted_audio.wav`
+![imagen resultado](../images/cap1_4.png)
 
+Paso 5. Coloca el siguiente código en una nueva celda y ejecútalo. El resultado debe ser: `La conversión a WAV se ha completado y el archivo se encuentra en: /content/converted_audio.wav`
 
 ```python
 from pydub import AudioSegment
@@ -86,7 +92,7 @@ else:
     print("La conversión a WAV ha fallado.")
 ```
 
-Paso 6. Ejecutar el siguiente bloque de codigo en una nueva celda para ver la forma de la señal
+Paso 6. Ejecuta el siguiente bloque de código en una nueva celda para observar la forma de la señal.
 
 ```python
 import wave
@@ -106,7 +112,7 @@ plt.ylabel("Amplitud")
 plt.show()
 ```
 
-Paso 7. Ejecutar el siguiente codigo para ver las predicciones que realiza este sistema previo al uso de la inteligencia artificial
+Paso 7. Ejecuta el siguiente código para ver las predicciones que realiza este sistema previo al uso de la inteligencia artificial.
 
 ```python
 import wave
@@ -175,15 +181,15 @@ for peak in peaks:
 print("Transcripción aproximada:", transcription)
 ```
 
-### Tarea 2. **Reconocimiento de voz usando librerías de Inteligencia Artificial 📠**
+### Tarea 2. Reconocimiento de voz usando librerías de Inteligencia Artificial 📠.
 
-Paso 8. Ejecutar el siguiente comando en una nueva celda de código
+Paso 8. Ejecuta el siguiente comando en una nueva celda de código:
 
 ```python
 !pip install SpeechRecognition pydub
 ```
 
-Paso 9. Ejecutar el siguiente codigo en una nueva colinealidad, la salida deber ser la siguiente: `La IA está basada en sistemas diseñados para aprender, razonar, resolver problemas, reconocer patrones y tomar decisiones.`
+Paso 9. Ejecuta el siguiente código en una nueva colinealidad, la salida deber ser la siguiente: `La IA está basada en sistemas diseñados para aprender, razonar, resolver problemas, reconocer patrones y tomar decisiones`.
 
 ```python
 import speech_recognition as sr
@@ -210,19 +216,19 @@ except sr.RequestError as e:
 ```
 
 
-### Tarea 3. **Transcripción de voz a texto usando Whisper**
+### Tarea 3. Transcripción de voz a texto usando Whisper.
 
-Paso 10. Ingresar al siguiente enlace y bajar hasta encontrar los modelos disponibles: https://github.com/openai/whisper
+Paso 10. Ingresa al siguiente enlace y baja hasta encontrar los modelos disponibles: https://github.com/openai/whisper
 
-![Modelos Whisper](images/cap1_5.png) 
+![Modelos Whisper](../images/cap1_5.png) 
 
-Paso 11. Ejecutar el siguiente comando en una nueva celda de código:
+Paso 11. Ejecuta el siguiente comando en una nueva celda de código:
 
 ```python
 pip install git+https://github.com/openai/whisper.git
 ```
 
-Paso 12. Ejecutar el siguiente codigo en una nueva celda probando el modelo `tiny` de Whisper
+Paso 12. Ejecuta el siguiente código en una nueva celda probando el modelo `tiny` de Whisper.
 
 ```python
 %%time
@@ -237,7 +243,7 @@ print(result["text"])
 #La IA está basada en sistemas diseñados para aprender, razonar, resolver problemas, reconocer patrones y tomar decisiones.
 ```
 
-Paso 13. Ahora, en la linea de codigo `model = whisper.load_model("tiny")`, cambiar `base` por `medium` por `small` y evaluar el nuevo rendimiento
+Paso 13. Ahora, en la línea de código `model = whisper.load_model("tiny")`, cambia `base` por `medium` por `small` y evalúa el nuevo rendimiento.
 
 ```python
 %%time
@@ -250,7 +256,8 @@ print("\n\n")
 print(result["text"])
 ```
 
-Paso 14. Repetirlo ahora para probar el modelo `small` y `medium`
+Paso 14. Repítelo ahora para probar el modelo `small` y `medium`.
 
-### Resultado esperado
-![imagen resultado](images/cap1_resultado.png) 
+### Resultado esperado:
+
+![imagen resultado](../images/cap1_resultado.png) 
