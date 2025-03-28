@@ -27,6 +27,13 @@ Cada uno de estos laboratorios está diseñado para ofrecerte una experiencia pr
 
 06. **[Demostración: IA en Programación: GitHub Copilot](./Capítulo6/lab6.md)**
    - ⏱️ **Duración estimada**: 45 minutos
+
 ---
 
 ## 📬 **Contacto y más información**
+
+Si tienes alguna pregunta o necesitas más detalles, no dudes en [contactarnos](mailto:soporte@netec.com). También puedes encontrar más recursos en nuestra página de [Netec](https://netec.com).
+
+---
+
+¡Gracias por visitar nuestra plataforma! No olvides revisar todos los laboratorios y comenzar tu viaje de aprendizaje hoy mismo.
