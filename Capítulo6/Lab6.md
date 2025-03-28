@@ -14,6 +14,12 @@ Al finalizar la práctica, serás capaz de:
 
 - 50 minutos.
 
+---
+
+**[⬅️ Atrás](https://netec-mx.github.io/IA-ML/Cap%C3%ADtulo5/Lab5.html)** | **[Lista General](https://netec-mx.github.io/IA-ML/)** 
+
+---
+
 ## Instrucciones:
 
 ### Tarea 1. Creación del archivo de trabajo.
