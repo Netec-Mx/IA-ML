@@ -1,4 +1,4 @@
-# ![Logo](images/neteclogo.png) 
+# ![Logo](./images/Logo_Netec.png) 
 
 **Plataforma de Laboratorios**
 
