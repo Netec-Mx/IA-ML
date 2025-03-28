@@ -12,6 +12,8 @@ Al finalizar la práctica, serás capaz de:
 ## Duración aproximada:
 - 40 minutos.
 
+**[⬅️ Atrás](https://netec-mx.github.io/IA-ML/Cap%C3%ADtulo1/Lab1.html)** | **[Lista General](https://netec-mx.github.io/IA-ML/)** | **[Siguiente ➡️]()**
+
 ## Instrucciones:
 
 ### Configuración del entorno de trabajo:
